@@ -7,29 +7,26 @@ import org.jsoup.nodes.*;
 import java.io.*;
 
 public class Main {
-    public static String FindHTMLTitle(String lsTargetSource) throws IOException {
 
-        Document doc = Jsoup.connect("https://mingle-portal.inforcloudsuite.com/"+ lsTargetSource).get(); //set target download
+    //Tyler thinks this will not work, we will prove him wrong-ish
+    public static String FindHTMLTitle(String lsTargetSource) throws IOException {
+        Document doc = Jsoup.connect("https://mingle-portal.inforcloudsuite.com/"+ lsTargetSource).get(); //set target download // https://mingle-portal.inforcloudsuite.com/ANDERSENCORP_DEV
         String title = doc.title();
         return title;
     }
     public static String FindHTMLContent(String lsTargetSource) throws IOException {
-
-        Document doc = Jsoup.connect("https://mingle-portal.inforcloudsuite.com/"+ lsTargetSource).get(); //set target download
+        Document doc = Jsoup.connect("https://mingle-portal.inforcloudsuite.com/"+ lsTargetSource).get(); //set target download // https://mingle-portal.inforcloudsuite.com/ANDERSENCORP_TST
         String content = doc.wholeText();
         return content;
     }
-
     public static String sourceSite() throws IOException {
         String lsSource = "ANDERSENCORP_DEV"; //this will be an input later
         return lsSource;
     }
-
     public static String targetSite() throws IOException {
         String lsTarget = "ANDERSENCORP_TST"; //this will be an input later
         return lsTarget;
     }
-
     public static void main(String[] args) throws IOException {
         Date date = new Date();
         String lsTarget = targetSite();
